@@ -6,7 +6,7 @@ export default function Header({ onThemeChange, onQueryChange }) {
     const [dark, setDark] = useState(false);
     const [q, setQ] = useState("");
     const toggleTheme = () => {
-        const root = document.documentElement; // <html>
+        const root = document.documentElement;
         root.classList.toggle("dark");
         const nowDark = root.classList.contains("dark");
         setDark(nowDark);
@@ -21,9 +21,8 @@ export default function Header({ onThemeChange, onQueryChange }) {
             onThemeChange?.("dark");
         }
     }, [onThemeChange]);
-    return (_jsx("header", { className: "header shadow-sm", children: _jsxs("div", { className: "container d-flex align-items-center justify-content-between gap-3", children: [_jsx("div", { className: "logo d-flex align-items-center gap-2", children: _jsx("span", { className: "fs-4 fw-bold text-white", children: "\uD83D\uDE80 Timeline" }) }), _jsxs("div", { className: "d-none d-sm-flex align-items-center bg-white bg-opacity-10 rounded-pill px-3 py-1 header-search", children: [_jsx(Search, { size: 16, className: "me-2 text-white" }), _jsx("input", { "aria-label": "Search events", className: "form-control form-control-sm bg-transparent border-0 text-white", placeholder: "Search by title/year/category\u2026", value: q, onChange: (e) => {
-                                const v = e.target.value;
-                                setQ(v);
-                                onQueryChange?.(v);
-                            } })] }), _jsxs("button", { id: "toggle-theme-btn", className: "btn btn-outline-light rounded-pill px-3", onClick: toggleTheme, "aria-pressed": dark, children: [dark ? _jsx(Sun, { size: 18 }) : _jsx(Moon, { size: 18 }), _jsx("span", { className: "ms-2", children: dark ? "Light" : "Dark" })] })] }) }));
+    return (_jsx("header", { className: "header shadow-sm", children: _jsxs("div", { className: "container d-flex align-items-center justify-content-between gap-3", children: [_jsx("div", { className: "logo fs-4 fw-bold text-white", children: "Worldline\uD83D\uDE80 " }), _jsxs("div", { className: "search-bar d-flex align-items-center", children: [_jsx(Search, { size: 16, className: "me-2 text-white" }), _jsx("input", { "aria-label": "Search events", className: "form-control", placeholder: "Search by title/year/category\u2026", value: q, onChange: (e) => {
+                                setQ(e.target.value);
+                                onQueryChange?.(e.target.value);
+                            } })] }), _jsxs("button", { id: "toggle-theme-btn", className: "btn btn-outline-light rounded-pill", onClick: toggleTheme, "aria-pressed": dark, children: [dark ? _jsx(Sun, { size: 18 }) : _jsx(Moon, { size: 18 }), _jsx("span", { className: "ms-2", children: dark ? "Light" : "Dark" })] })] }) }));
 }

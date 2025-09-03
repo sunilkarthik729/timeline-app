@@ -1,58 +1,702 @@
 [
   {
+    "year": "3000 BC",
+    "title": "First Use of Copper Tools",
+    "description": "Early humans begin using copper tools, marking the start of metallurgy.",
+    "imageURL": "./assets/history1.jpg",
+    "category": "History"
+  },
+  {
+    "year": "2560 BC",
+    "title": "Construction of the Great Pyramid of Giza",
+    "description": "The Great Pyramid of Giza is completed in Egypt, showcasing ancient engineering.",
+    "imageURL": "./assets/history2.jpg",
+    "category": "History"
+  },
+  {
+    "year": "776 BC",
+    "title": "First Olympic Games",
+    "description": "The first recorded Olympic Games take place in Olympia, Greece.",
+    "imageURL": "./assets/culture3.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "509 BC",
+    "title": "Founding of the Roman Republic",
+    "description": "Rome establishes a republic after overthrowing the monarchy.",
+    "imageURL": "./assets/history4.jpg",
+    "category": "History"
+  },
+  {
+    "year": "44 BC",
+    "title": "Assassination of Julius Caesar",
+    "description": "Roman leader Julius Caesar is assassinated, leading to the rise of the Roman Empire.",
+    "imageURL": "./assets/history5.jpg",
+    "category": "History"
+  },
+  {
+    "year": "476",
+    "title": "Fall of the Western Roman Empire",
+    "description": "The Western Roman Empire collapses, marking the start of the Middle Ages.",
+    "imageURL": "./assets/history6.jpg",
+    "category": "History"
+  },
+  {
+    "year": "622",
+    "title": "Hijra of Prophet Muhammad",
+    "description": "Prophet Muhammad migrates from Mecca to Medina, beginning the Islamic calendar.",
+    "imageURL": "./assets/history7.jpg",
+    "category": "History"
+  },
+  {
+    "year": "800",
+    "title": "Coronation of Charlemagne",
+    "description": "Charlemagne is crowned Emperor of the Holy Roman Empire by Pope Leo III.",
+    "imageURL": "./assets/history8.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1066",
+    "title": "Norman Conquest of England",
+    "description": "William the Conqueror defeats Harold II at the Battle of Hastings.",
+    "imageURL": "./assets/history9.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1215",
+    "title": "Signing of the Magna Carta",
+    "description": "King John of England signs the Magna Carta, limiting royal power.",
+    "imageURL": "./assets/politics10.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "1347",
+    "title": "Black Death Begins in Europe",
+    "description": "The Black Death pandemic kills millions in Europe, changing society and economy.",
+    "imageURL": "./assets/history11.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1453",
+    "title": "Fall of Constantinople",
+    "description": "The Ottoman Empire captures Constantinople, ending the Byzantine Empire.",
+    "imageURL": "./assets/history12.jpg",
+    "category": "History"
+  },
+  {
     "year": "1492",
     "title": "Christopher Columbus Reaches the Americas",
-    "description": "In 1492, Italian explorer Christopher Columbus, sailing under the Spanish crown, reached the shores of the Americas, marking the beginning of European exploration and colonization of the continent.",
-    "imageURL": "./assets/colombus.jpg",
+    "description": "Italian explorer Christopher Columbus reaches the Americas, initiating European exploration.",
+    "imageURL": "./assets/history13.jpg",
     "category": "History"
+  },
+  {
+    "year": "1517",
+    "title": "Martin Luther's 95 Theses",
+    "description": "Martin Luther publishes his 95 Theses, sparking the Protestant Reformation.",
+    "imageURL": "./assets/history14.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1588",
+    "title": "Defeat of the Spanish Armada",
+    "description": "The English navy defeats the Spanish Armada, marking a turning point in European power.",
+    "imageURL": "./assets/history15.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1607",
+    "title": "Founding of Jamestown",
+    "description": "Jamestown is established as the first permanent English settlement in America.",
+    "imageURL": "./assets/history16.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1642",
+    "title": "English Civil War Begins",
+    "description": "The English Civil War starts between Royalists and Parliamentarians.",
+    "imageURL": "./assets/history17.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1687",
+    "title": "Newton Publishes Principia Mathematica",
+    "description": "Isaac Newton publishes Principia Mathematica, laying the foundation of classical mechanics.",
+    "imageURL": "./assets/science18.jpg",
+    "category": "Science"
   },
   {
     "year": "1776",
     "title": "American Declaration of Independence",
-    "description": "On July 4, 1776, the United States declared independence from Great Britain, marking the birth of the nation. The Declaration was primarily authored by Thomas Jefferson.",
-    "imageURL": "./assets/american-independence.jpeg",
-    "category": "History"
+    "description": "The United States declares independence from Great Britain.",
+    "imageURL": "./assets/politics19.jpg",
+    "category": "Politics"
   },
   {
     "year": "1789",
     "title": "French Revolution Begins",
-    "description": "The French Revolution began in 1789 with the storming of the Bastille. It led to the end of monarchy in France and significant political and social changes.",
-    "imageURL": "./assets/french.webp",
+    "description": "The French Revolution starts, leading to major social and political change.",
+    "imageURL": "./assets/history20.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1804",
+    "title": "Napoleon Crowned Emperor",
+    "description": "Napoleon Bonaparte crowns himself Emperor of France.",
+    "imageURL": "./assets/history21.jpg",
     "category": "History"
   },
   {
     "year": "1865",
     "title": "End of the American Civil War",
-    "description": "The American Civil War ended in 1865 with the surrender of Confederate forces, leading to the abolition of slavery and the beginning of Reconstruction in the United States.",
-    "imageURL": "./assets/war.webp",
+    "description": "The American Civil War ends, and slavery is abolished in the United States.",
+    "imageURL": "./assets/history22.jpg",
     "category": "History"
+  },
+  {
+    "year": "1876",
+    "title": "Alexander Graham Bell Patents the Telephone",
+    "description": "Alexander Graham Bell patents the telephone, revolutionizing communication.",
+    "imageURL": "./assets/technology23.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "1903",
+    "title": "Wright Brothers First Flight",
+    "description": "The Wright brothers make the first powered airplane flight at Kitty Hawk.",
+    "imageURL": "./assets/science24.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "1914",
+    "title": "Start of World War I",
+    "description": "World War I begins, involving many countries across Europe and the world.",
+    "imageURL": "./assets/military history25.png",
+    "category": "Military History"
+  },
+  {
+    "year": "1917",
+    "title": "Russian Revolution",
+    "description": "The Bolsheviks seize power in Russia, leading to the formation of the Soviet Union.",
+    "imageURL": "./assets/history26.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1929",
+    "title": "Wall Street Crash",
+    "description": "The stock market crashes in the United States, triggering the Great Depression.",
+    "imageURL": "./assets/economics27.jpg",
+    "category": "Economics"
+  },
+  {
+    "year": "1939",
+    "title": "Start of World War II",
+    "description": "Germany invades Poland, beginning World War II.",
+    "imageURL": "./assets/military history28.jpg",
+    "category": "Military History"
+  },
+  {
+    "year": "1945",
+    "title": "End of World War II",
+    "description": "World War II ends with Allied victory, and the United Nations is founded.",
+    "imageURL": "./assets/history29.jpg",
+    "category": "History"
+  },
+  {
+    "year": "1947",
+    "title": "Independence of India and Pakistan",
+    "description": "India and Pakistan gain independence from British rule.",
+    "imageURL": "./assets/politics30.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "1963",
+    "title": "Martin Luther King Jr. Delivers 'I Have a Dream'",
+    "description": "MLK delivers his iconic speech advocating civil rights and equality.",
+    "imageURL": "./assets/culture31.jpg",
+    "category": "Culture"
   },
   {
     "year": "1969",
     "title": "Apollo 11 Moon Landing",
-    "description": "On July 20, 1969, NASA's Apollo 11 mission successfully landed astronauts Neil Armstrong and Buzz Aldrin on the Moon, marking one of humanity's greatest achievements.",
-    "imageURL": "./assets/moon.jpg",
-    "category": "Science"
+    "description": "Neil Armstrong and Buzz Aldrin become the first humans to walk on the Moon.",
+    "imageURL": "./assets/moonland.jpg",
+    "category": "Space Exploration"
   },
   {
     "year": "1989",
     "title": "Fall of the Berlin Wall",
-    "description": "On November 9, 1989, the Berlin Wall fell, symbolizing the end of the Cold War and leading to the reunification of Germany.",
-    "imageURL": "./assets/wall.jpg",
+    "description": "The Berlin Wall falls, leading to the reunification of Germany.",
+    "imageURL": "./assets/berlin.jpg",
     "category": "Politics"
   },
   {
-    "year": "2008",
-    "title": "Barack Obama Elected President",
-    "description": "In 2008, Barack Obama was elected as the 44th president of the United States, becoming the first African-American to hold the office.",
-    "imageURL": "./assets/obama.jpg",
+    "year": "1990",
+    "title": "Launch of the Hubble Space Telescope",
+    "description": "NASA launches the Hubble Space Telescope, revolutionizing astronomy.",
+    "imageURL": "./assets/science34.png",
+    "category": "Science"
+  },
+  {
+    "year": "1991",
+    "title": "Dissolution of the Soviet Union",
+    "description": "The Soviet Union officially dissolves, ending the Cold War.",
+    "imageURL": "./assets/politics35.jpg",
     "category": "Politics"
+  },
+  {
+    "year": "2001",
+    "title": "September 11 Attacks",
+    "description": "Terrorist attacks in the U.S. lead to global security changes and the War on Terror.",
+    "imageURL": "./assets/history36.jpg",
+    "category": "History"
+  },
+  {
+    "year": "2004",
+    "title": "Facebook Launches",
+    "description": "Mark Zuckerberg launches Facebook, transforming social networking.",
+    "imageURL": "./assets/technology37.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2007",
+    "title": "First iPhone Released",
+    "description": "Apple releases the first iPhone, revolutionizing mobile technology.",
+    "imageURL": "./assets/technology38.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2010",
+    "title": "Instagram Launches",
+    "description": "Instagram is launched, becoming one of the world's most popular social media apps.",
+    "imageURL": "./assets/culture39.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2012",
+    "title": "Curiosity Rover Lands on Mars",
+    "description": "NASA's Curiosity Rover lands on Mars to explore the surface and search for signs of life.",
+    "imageURL": "./assets/space exploration40.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2015",
+    "title": "Paris Climate Agreement",
+    "description": "World leaders sign the Paris Climate Agreement to combat climate change.",
+    "imageURL": "./assets/politics41.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2016",
+    "title": "Brexit Referendum",
+    "description": "The United Kingdom votes to leave the European Union.",
+    "imageURL": "./assets/politics42.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2016",
+    "title": "Pokemon Go Released",
+    "description": "Niantic releases Pokémon Go, a revolutionary augmented reality mobile game.",
+    "imageURL": "./assets/technology43.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2017",
+    "title": "Total Solar Eclipse in the US",
+    "description": "A total solar eclipse crosses the United States, visible coast to coast.",
+    "imageURL": "./assets/science44.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2018",
+    "title": "Thailand Cave Rescue",
+    "description": "12 boys and their coach are rescued from a flooded cave in Thailand.",
+    "imageURL": "./assets/culture45.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2019",
+    "title": "Notre Dame Cathedral Fire",
+    "description": "A fire severely damages the Notre Dame Cathedral in Paris, France.",
+    "imageURL": "./assets/history46.jpg",
+    "category": "History"
+  },
+  {
+    "year": "2019",
+    "title": "COVID-19 First Cases Detected",
+    "description": "Early cases of COVID-19 are detected in Wuhan, China.",
+    "imageURL": "./assets/science47.jpg",
+    "category": "Science"
   },
   {
     "year": "2020",
-    "title": "COVID-19 Pandemic",
-    "description": "The COVID-19 pandemic began in 2020, affecting millions worldwide and leading to unprecedented global public health and economic challenges.",
-    "imageURL": "./assets/corona.jpg",
+    "title": "COVID-19 Pandemic Declared",
+    "description": "The World Health Organization declares COVID-19 a global pandemic.",
+    "imageURL": "./assets/science48.jpg",
     "category": "Science"
+  },
+  {
+    "year": "2020",
+    "title": "Black Lives Matter Protests",
+    "description": "Mass protests against racial injustice and police brutality occur worldwide.",
+    "imageURL": "./assets/culture49.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2020",
+    "title": "Launch of SpaceX Crew Dragon",
+    "description": "SpaceX successfully launches the Crew Dragon capsule, sending astronauts to the ISS.",
+    "imageURL": "./assets/space exploration50.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2021",
+    "title": "Global COVID-19 Vaccination Campaigns",
+    "description": "Mass vaccination campaigns begin worldwide to combat COVID-19.",
+    "imageURL": "./assets/science51.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2021",
+    "title": "Tokyo Summer Olympics Held",
+    "description": "Tokyo hosts the Summer Olympics after being postponed due to the pandemic.",
+    "imageURL": "./assets/culture52.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2022",
+    "title": "James Webb Space Telescope Launched",
+    "description": "NASA launches the James Webb Space Telescope, the most powerful space telescope to date.",
+    "imageURL": "./assets/space exploration53.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2022",
+    "title": "Russia-Ukraine Conflict Escalates",
+    "description": "Russia invades Ukraine, triggering international condemnation and sanctions.",
+    "imageURL": "./assets/politics54.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2023",
+    "title": "AI Advances Rapidly",
+    "description": "Artificial intelligence technology achieves significant breakthroughs in multiple fields.",
+    "imageURL": "./assets/technology55.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Climate Reports Alarm Scientists",
+    "description": "Reports warn of accelerating climate change and environmental crises worldwide.",
+    "imageURL": "./assets/science56.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Mars Sample Return Mission Planned",
+    "description": "NASA and ESA plan missions to return samples from Mars to Earth for study.",
+    "imageURL": "./assets/space exploration57.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "New Renewable Energy Milestones",
+    "description": "Global renewable energy production reaches record levels, reducing carbon footprint.",
+    "imageURL": "./assets/science58.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Women’s Achievements Recognized Globally",
+    "description": "International awards highlight groundbreaking contributions of women in science and culture.",
+    "imageURL": "./assets/culture59.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "Global Internet Access Expands",
+    "description": "Efforts to provide internet access to remote regions make significant progress worldwide.",
+    "imageURL": "./assets/technology60.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Economic Shifts",
+    "description": "Significant economic changes occur worldwide due to technology, trade, and policy reforms.",
+    "imageURL": "./assets/economics61.jpg",
+    "category": "Economics"
+  },
+  {
+    "year": "2023",
+    "title": "Advancements in Quantum Computing",
+    "description": "Quantum computing technology achieves new milestones, promising faster data processing.",
+    "imageURL": "./assets/technology62.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in Medical Science",
+    "description": "Medical researchers develop new therapies and vaccines for complex diseases.",
+    "imageURL": "./assets/science63.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Renewed Focus on Space Exploration",
+    "description": "Countries and private companies increase investments in space missions and technology.",
+    "imageURL": "./assets/space exploration64.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "Global Art Exhibitions Thrive",
+    "description": "Major art exhibitions around the world attract record visitors and attention.",
+    "imageURL": "./assets/culture65.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Environmental Policies Implemented",
+    "description": "Governments implement historic policies to combat climate change and promote sustainability.",
+    "imageURL": "./assets/politics66.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2023",
+    "title": "Major Advances in Robotics",
+    "description": "Robots and automation technologies achieve new capabilities in manufacturing and services.",
+    "imageURL": "./assets/technology67.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Sporting Events Rescheduled",
+    "description": "Sports events worldwide adapt to changing conditions and pandemic aftermaths.",
+    "imageURL": "./assets/culture68.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "International Scientific Collaborations Increase",
+    "description": "Scientists collaborate internationally on space, climate, and health research projects.",
+    "imageURL": "./assets/science69.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Expansion of Renewable Energy Sources",
+    "description": "Wind, solar, and other renewable energies expand rapidly across continents.",
+    "imageURL": "./assets/science70.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Political Elections",
+    "description": "Countries hold historic elections with unprecedented voter turnout and diversity.",
+    "imageURL": "./assets/politics71.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in AI and Machine Learning",
+    "description": "AI achieves new levels in natural language, vision, and robotics applications.",
+    "imageURL": "./assets/technology72.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Cultural Festivals Resume Globally",
+    "description": "Major cultural and music festivals resume after pandemic restrictions, attracting millions.",
+    "imageURL": "./assets/culture73.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "New Discoveries in Space",
+    "description": "Astronomers discover exoplanets, black holes, and new cosmic phenomena.",
+    "imageURL": "./assets/space exploration74.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "Global Awareness Campaigns Expand",
+    "description": "Worldwide campaigns increase awareness of social, environmental, and health issues.",
+    "imageURL": "./assets/culture75.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in Clean Water Technologies",
+    "description": "Innovations provide clean water to previously underserved communities worldwide.",
+    "imageURL": "./assets/science76.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Expansion of Electric Vehicles",
+    "description": "Electric vehicle adoption grows rapidly due to innovation, policy, and consumer demand.",
+    "imageURL": "./assets/technology77.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Climate Reports Released",
+    "description": "Scientific reports warn of urgent climate action required globally.",
+    "imageURL": "./assets/science78.png",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Global Media Innovations",
+    "description": "Media and entertainment platforms introduce new immersive technologies and experiences.",
+    "imageURL": "./assets/culture79.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "International Cooperation in Space",
+    "description": "Nations work together on missions, including Mars and lunar exploration.",
+    "imageURL": "./assets/space exploration80.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "Global Internet Expansion",
+    "description": "Internet access reaches more remote areas, connecting billions of people worldwide.",
+    "imageURL": "./assets/technology81.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in Renewable Energy Storage",
+    "description": "New battery technologies improve storage and efficiency of renewable energy.",
+    "imageURL": "./assets/science82.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Space Tourism Flights",
+    "description": "Private companies conduct successful space tourism flights with civilians.",
+    "imageURL": "./assets/space exploration83.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "Global Healthcare Advances",
+    "description": "Innovations in medicine and telehealth improve access to healthcare worldwide.",
+    "imageURL": "./assets/science84.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Major International Climate Conferences",
+    "description": "Leaders and organizations convene to address climate change and sustainability.",
+    "imageURL": "./assets/politics85.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in AI Ethics and Governance",
+    "description": "Global efforts focus on ethical AI use, regulations, and responsible innovation.",
+    "imageURL": "./assets/technology86.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Cultural Heritage Initiatives",
+    "description": "Countries collaborate to preserve and celebrate world cultural heritage.",
+    "imageURL": "./assets/culture87.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "Expansion of Global Trade Networks",
+    "description": "Trade networks expand with digital commerce and international agreements.",
+    "imageURL": "./assets/economics88.jpg",
+    "category": "Economics"
+  },
+  {
+    "year": "2023",
+    "title": "Innovations in Education Technology",
+    "description": "EdTech platforms revolutionize learning with AI, VR, and interactive tools.",
+    "imageURL": "./assets/technology89.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Scientific Collaborations",
+    "description": "International collaborations accelerate research in climate, health, and space science.",
+    "imageURL": "./assets/science90.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Major Archaeological Discoveries",
+    "description": "Archaeologists uncover ancient civilizations and significant historical artifacts.",
+    "imageURL": "./assets/history91.jpg",
+    "category": "History"
+  },
+  {
+    "year": "2023",
+    "title": "Global Renewable Energy Milestones",
+    "description": "Countries achieve record levels in renewable energy adoption and efficiency.",
+    "imageURL": "./assets/science92.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Expansion of Electric Aviation",
+    "description": "Electric and hybrid airplanes begin limited commercial and experimental flights.",
+    "imageURL": "./assets/technology93.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Historic Wildlife Conservation Achievements",
+    "description": "Endangered species see population recoveries due to global conservation efforts.",
+    "imageURL": "./assets/science94.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Major Global Sporting Achievements",
+    "description": "Athletes break world records and achieve historic milestones in international sports.",
+    "imageURL": "./assets/culture95.jpg",
+    "category": "Culture"
+  },
+  {
+    "year": "2023",
+    "title": "Advances in Sustainable Agriculture",
+    "description": "Sustainable farming practices expand, improving food security globally.",
+    "imageURL": "./assets/science96.jpg",
+    "category": "Science"
+  },
+  {
+    "year": "2023",
+    "title": "Global Policy Reforms for Sustainability",
+    "description": "Governments enact policies to promote environmental sustainability and energy efficiency.",
+    "imageURL": "./assets/politics97.jpg",
+    "category": "Politics"
+  },
+  {
+    "year": "2023",
+    "title": "Breakthroughs in Space Mining Research",
+    "description": "New technologies and missions explore resources on asteroids and other celestial bodies.",
+    "imageURL": "./assets/space exploration98.jpg",
+    "category": "Space Exploration"
+  },
+  {
+    "year": "2023",
+    "title": "Digital Currency and Blockchain Advances",
+    "description": "Blockchain and cryptocurrency adoption increase with new technological innovations.",
+    "imageURL": "./assets/technology99.jpg",
+    "category": "Technology"
+  },
+  {
+    "year": "2023",
+    "title": "Global Celebrations of Scientific Milestones",
+    "description": "World events celebrate breakthroughs in science, technology, and human achievements.",
+    "imageURL": "./assets/culture100.jpg",
+    "category": "Culture"
   }
 ]

@@ -13,7 +13,7 @@ export default function EventMarker({ event, onClick, isActive, refObj, onKeyDow
   return (
     <button
       ref={refObj}
-      className={`card h-100 shadow-sm event ${isActive ? "active" : ""}`}
+      className={`event-card ${isActive ? "active" : ""}`}
       onClick={onClick}
       onKeyDown={(e) => {
         onKeyDown?.(e);
@@ -26,10 +26,11 @@ export default function EventMarker({ event, onClick, isActive, refObj, onKeyDow
       aria-label={`Open details for ${event.title}, year ${event.year}`}
       tabIndex={0}
     >
-      <div className="card-body text-start">
-        <img src={event.imageURL} alt={event.title} className="modal-img" />
-        <h5 className="card-title">{event.title}</h5>
-        <p className="card-text text-muted">{event.year}</p>
+      <img src={event.imageURL} alt={event.title} loading="lazy" className="event-img" />
+      <div className="event-info">
+        <h5>{event.title}</h5>
+        <p>{event.year}</p>
+        <span className={`category-dot ${event.category.toLowerCase()}`}>{event.category}</span>
       </div>
     </button>
   );

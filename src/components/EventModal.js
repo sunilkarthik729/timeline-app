@@ -8,10 +8,8 @@ export default function EventModal({ event, onClose, triggerRef }) {
         if (!event)
             return;
         const handleKeyDown = (e) => {
-            if (e.key === "Escape") {
-                e.preventDefault();
+            if (e.key === "Escape")
                 onClose();
-            }
             if (e.key === "Tab") {
                 const focusable = modalRef.current?.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
                 if (!focusable || focusable.length === 0)
@@ -29,11 +27,8 @@ export default function EventModal({ event, onClose, triggerRef }) {
             }
         };
         document.addEventListener("keydown", handleKeyDown);
-        // Initial focus
-        requestAnimationFrame(() => {
-            const first = modalRef.current?.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            first?.focus();
-        });
+        const first = modalRef.current?.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        first?.focus();
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
             triggerRef?.current?.focus();
@@ -41,5 +36,5 @@ export default function EventModal({ event, onClose, triggerRef }) {
     }, [event, onClose, triggerRef]);
     if (!event)
         return null;
-    return createPortal(_jsx("div", { className: "modal show", role: "dialog", "aria-modal": "true", children: _jsxs("div", { className: "modal-content", ref: modalRef, children: [_jsx("button", { className: "close-btn", onClick: onClose, "aria-label": "Close dialog", children: "\u00D7" }), _jsxs("h2", { children: [event.title, " (", event.year, ")"] }), _jsx("img", { src: event.imageURL, alt: event.title, className: "modal-img" }), _jsx("p", { children: event.description }), _jsxs("p", { children: [_jsx("strong", { children: "Category:" }), " ", event.category] })] }) }), document.body);
+    return createPortal(_jsx("div", { className: "modal-overlay", onClick: onClose, children: _jsxs("div", { className: "modal-content", ref: modalRef, onClick: (e) => e.stopPropagation(), children: [_jsx("button", { className: "close-btn", onClick: onClose, "aria-label": "Close dialog", children: "\u00D7" }), _jsxs("h2", { children: [event.title, " (", event.year, ")"] }), _jsx("img", { src: event.imageURL, alt: event.title, className: "modal-img" }), _jsx("p", { children: event.description }), _jsxs("p", { children: [_jsx("strong", { children: "Category:" }), " ", event.category] })] }) }), document.body);
 }

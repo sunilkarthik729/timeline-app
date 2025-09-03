@@ -1,27 +1,44 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "./components/Header";
 import Timeline from "./components/Timeline";
 import FilterPanel from "./components/FilterPanel";
 import EventModal from "./components/EventModal";
 import "./App.css";
+import Footer from "./components/Footer";
 const App = () => {
     const [events, setEvents] = useState([]);
     const [selected, setSelected] = useState(null);
+    const [filteredCategory, setFilteredCategory] = useState("All");
+    const [searchQuery, setSearchQuery] = useState("");
+    const modalTriggerRef = useRef(null);
+    // Load events
     useEffect(() => {
         fetch("/data/events.json")
             .then((r) => r.json())
             .then((data) => {
-            const sorted = [...data].sort((a, b) => a.year - b.year);
+            const sorted = [...data].sort((a, b) => Number(a.year) - Number(b.year));
             setEvents(sorted);
         })
             .catch((err) => console.error("Failed to load events:", err));
     }, []);
-    const categories = Array.from(new Set(events.map(e => e.category)));
-    const [filteredCategory, setFilteredCategory] = useState("All");
-    const displayedEvents = filteredCategory === "All"
-        ? events
-        : events.filter(e => e.category === filteredCategory);
-    return (_jsxs("div", { className: "app", children: [_jsx(Header, {}), _jsxs("main", { children: [_jsx(FilterPanel, { categories: categories, activeCategory: filteredCategory, onFilter: setFilteredCategory }), _jsx("section", { id: "timeline", children: _jsx(Timeline, { events: displayedEvents, onSelect: setSelected, activeEvent: null }) })] }), _jsx(EventModal, { event: selected, onClose: () => setSelected(null) }), _jsx("footer", { className: "text-center py-3 ", children: _jsx("h6", { children: "\u00A9 2025 Timeline App" }) })] }));
+    // Build category list
+    const categories = [
+        "All",
+        ...Array.from(new Set(events.map((e) => e.category))),
+    ];
+    // Filter + search
+    const displayedEvents = events.filter((e) => {
+        const categoryMatch = filteredCategory === "All" || e.category === filteredCategory;
+        const query = searchQuery.toLowerCase();
+        const searchMatch = e.title.toLowerCase().includes(query) ||
+            String(e.year).includes(query) ||
+            e.category.toLowerCase().includes(query);
+        return categoryMatch && searchMatch;
+    });
+    return (_jsxs("div", { className: "app", children: [_jsx(Header, { onQueryChange: setSearchQuery }), _jsxs("main", { children: [_jsx(FilterPanel, { categories: categories, activeCategory: filteredCategory, onFilter: setFilteredCategory }), _jsx("section", { id: "timeline", children: _jsx(Timeline, { events: displayedEvents, activeEvent: selected, onSelect: (event, ref) => {
+                                setSelected(event);
+                                modalTriggerRef.current = ref.current;
+                            } }) })] }), _jsx(EventModal, { event: selected, onClose: () => setSelected(null), triggerRef: modalTriggerRef }), _jsx(Footer, {})] }));
 };
 export default App;

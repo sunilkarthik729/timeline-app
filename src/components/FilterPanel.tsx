@@ -8,22 +8,16 @@ type Props = {
 
 export default function FilterPanel({ categories, activeCategory, onFilter }: Props) {
   return (
-    <nav className="filter-panel my-3">
+    <nav className="filter-panel">
       {categories.map((c) => (
         <button
           key={c}
-          className={`btn me-2 ${activeCategory === c ? "btn-primary" : "btn-outline-light"}`}
+          className={`btn ${activeCategory === c ? "btn-primary" : "btn-outline-light"} me-2`}
           onClick={() => onFilter(c)}
         >
           {c}
         </button>
       ))}
-      <button
-        className={`btn ${activeCategory === "All" ? "btn-secondary" : "btn-outline-secondary"}`}
-        onClick={() => onFilter("All")}
-      >
-        All
-      </button>
     </nav>
   );
 }
