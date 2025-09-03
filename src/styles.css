@@ -1,141 +1,180 @@
-/* finish line-clamp properly */
-.line-clamp {
-  display: -webkit-box;
-  
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* ===============================
+   Timeline App — Consolidated Styles
+   (replaces App.css + Style.css)
+   =============================== */
+
+/* -------- Reset -------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.55;
 }
-:root {
-  --text: #111;
-  --bg-card: rgba(255,255,255,0.9);
+
+/* -------- Design Tokens (Light) -------- */
+:root{
+  --primary: #4a90e2;
+  --accent: #ff6f61;
+  --text: #111111;
+  --text-muted: #374151;
+  --bg-card: #ffffff;            /* solid, NOT transparent */
+  --bg-elev: #f6f7fb;
+  --bg-overlay: rgba(0,0,0,0.75);/* modal backdrop */
+  --ring: rgba(255,111,97,0.7);
+  --radius: 12px;
 }
-:root.dark {
+
+/* -------- Design Tokens (Dark) -------- */
+:root.dark{
   --text: #f5f5f5;
-  --bg-card: rgba(255,255,255,0.08);
-}
-body.dark-theme .content { background: #1e1e1e; }
-body.dark-theme .modal-content { background: #1e1e1e; }
-
-/* ---------- Modal ---------- */
-.modal {
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  display: none; /* toggled via JS */
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.65);
-  padding: 1.25rem;
-  z-index: 1000;
+  --text-muted: #d1d5db;
+  --bg-card: #1b1b1f;            /* solid card for great contrast */
+  --bg-elev: #12121a;
+  --bg-overlay: rgba(0,0,0,0.75);
 }
 
-.modal[aria-hidden="false"],
-.modal.show {
-  display: flex;
-}
-
-.modal-content {
-  background: var(--bg-card);
+/* -------- Page Background -------- */
+body{
   color: var(--text);
-  width: 100%;
-  max-width: 680px;
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-  position: relative;
+  background-image: linear-gradient(177.6deg, rgba(20,0,113,1) 15.3%, rgba(1,0,62,1) 91.3%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-.close-btn {
-  position: absolute;
-  right: 0.75rem;
-  top: 0.5rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  color: inherit;
-}
-
-.modal-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0.5rem 0;
-}
-
-/* ---------- Footer ---------- */
-footer {
-  text-align: center;
+/* -------- Header -------- */
+.header{
+  padding: .9rem 1rem;
   color: #fff;
-  padding: 1rem;
-  opacity: 0.95;
-  margin-top: 2rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+}
+.logo{ font-weight: 800; }
+
+.header-search input{
+  min-width: 320px;
+  color: #fff;
+}
+.header-search input::placeholder{ color: rgba(255,255,255,.85); }
+
+#toggle-theme-btn{
+  display: inline-flex; align-items: center;
+  gap:.5rem; border: 0;
+  background: linear-gradient(135deg, var(--accent), #ff856c);
+  color: #fff; border-radius: 999px; padding: .5rem .9rem;
+  box-shadow: 0 8px 18px rgba(255,111,97,.35);
+  cursor: pointer; transition: transform .15s ease;
+}
+#toggle-theme-btn:hover{ transform: translateY(-1px); }
+
+/* -------- Filters -------- */
+.filter-panel{ color:#fff; margin: 1rem 0; }
+.filter-panel .btn{ margin-right:.5rem; }
+.btn-outline-light{
+  --bs-btn-color:#fff; --bs-btn-border-color:rgba(255,255,255,.45);
+  --bs-btn-hover-bg:#fff; --bs-btn-hover-color:#111;
+}
+.btn-outline-secondary{ --bs-btn-color:#e5e7eb; }
+
+/* -------- Timeline Cards -------- */
+.event{
+  display: flex; align-items: flex-start; gap:.85rem;
+  border: 0; overflow: hidden; cursor: pointer;
+  background: var(--bg-card);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.2);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s;
+}
+.event:hover{ transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0,0,0,.3); }
+.card-body{ background: var(--bg-card); color: var(--text); }
+.card-title{ color: var(--text); font-weight: 800; }
+.card-text{ color: var(--text-muted); }
+
+/* Active ring for aria-current */
+.event.active,
+.event[aria-current="true"]{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
 }
 
-/* ---------- Accessibility & interactions ---------- */
-.event:focus,
-.event[tabindex="0"]:focus,
-#toggle-theme-btn:focus,
-.more-btn:focus,
-.close-btn:focus {
-  outline: 3px solid rgba(255,111,97,0.25);
+/* -------- Focus styles (WCAG visible focus) -------- */
+:where(button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])):focus{
+  outline: 3px solid var(--ring);
   outline-offset: 3px;
   border-radius: 8px;
 }
 
-/* small button used inside cards if any */
-.more-btn {
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  border: 0;
-  cursor: pointer;
-  background: linear-gradient(135deg, var(--accent), #ff856c);
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 6px 14px rgba(255,111,97,0.25);
+/* -------- Modal -------- */
+.modal-backdrop{
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-overlay);       /* opaque backdrop */
+  z-index: 1050; padding: 1rem;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75); /* dark backdrop */
+  z-index: 1050;
+  padding: 1rem;
 }
 
-/* ---------- Utilities ---------- */
-.muted { opacity: 0.8; color: rgba(255,255,255,0.8); }
-.center { display:flex; align-items:center; justify-content:center; }
-
-/* ---------- Theme fallback & dark-mode hook ---------- */
-/* In case you toggle class on <html> instead of :root */
-html.dark {
-  --text: #f5f5f5;
-  --bg-card: rgba(255,255,255,0.06);
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 1050;
+  padding: 1rem;
+  overflow-y: auto; /* allow scrolling when content is tall */
 }
 
-/* ---------- Responsive fine-tuning ---------- */
-@media (max-width: 480px) {
-  .header { padding: 0.75rem 1rem; }
-  .logo { font-size: 1rem; }
-  .event { padding: 0.85rem; gap: 0.6rem; }
-  .event-title { font-size: 0.98rem; }
-  .modal-content { padding: 1rem; max-width: 92%; }
+.modal-content {
+  position: relative;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;         /* keep inside screen */
+  overflow-y: auto;         /* scroll inside card if needed */
+  box-shadow: 0 22px 48px rgba(0,0,0,0.55);
 }
 
-@media (min-width: 1024px) {
-  .modal-content { padding: 1.5rem 2rem; }
+:root.dark .modal-content {
+  background-color: #1c1c1c !important;
+  color: #f5f5f5 !important;
+}
+.filter-panel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-close{
+  position: absolute; right: .75rem; top: .75rem;
+  filter: invert( var(--is-dark, 0) ); /* looks good in both themes */
+}
+.modal-img{ width:100%; height:auto; border-radius: 10px; margin: .5rem 0; }
+
+/* -------- Utilities -------- */
+.line-clamp{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.visually-hidden{
+  position:absolute!important; height:1px; width:1px; overflow:hidden;
+  clip: rect(1px,1px,1px,1px); white-space:nowrap; border:0; padding:0; margin:-1px;
 }
 
-/* small visual polish on cards when dark theme active */
-:root.dark .event,
-html.dark .event {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
+/* -------- Footer -------- */
+footer{ text-align:center; color:#fff; padding:1rem; opacity:.95; margin-top:2rem; }
 
-/* ensure images inside event cards don't overflow */
-.event-card img,
-.event-card .thumbnail {
-  max-width: 140px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* final safe rule to ensure body gradient covers everything */
-body {
-  min-height: 100vh;
-  background-attachment: fixed;
+/* -------- Responsive tweaks -------- */
+@media (max-width:480px){
+  .header{ padding:.75rem 1rem; }
+  .card-title{ font-size:1rem; }
+  .modal-content{ padding:1rem; max-width:92%; }
 }

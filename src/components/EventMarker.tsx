@@ -1,28 +1,36 @@
+import type { EventItem } from "../types";
+import "../styles.css";
+
 type Props = {
-  event: {
-    year: number;
-    title: string;
-    description: string;
-    imageURL: string;
-    category: string;
-  };
+  event: EventItem;
   onClick: () => void;
+  isActive: boolean;
+  refObj: React.RefObject<HTMLButtonElement>;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
 };
 
-export default function EventMarker({ event, onClick }: Props) {
+export default function EventMarker({ event, onClick, isActive, refObj, onKeyDown }: Props) {
   return (
-    <div className="card h-100 shadow-sm event" onClick={onClick} style={{cursor:"pointer"}}>
-      <img
-        src={event.imageURL}
-        alt={event.title}
-        className="card-img-top"
-        style={{ height: "180px", objectFit: "cover" }}
-      />
-      <div className="card-body">
+    <button
+      ref={refObj}
+      className={`card h-100 shadow-sm event ${isActive ? "active" : ""}`}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        onKeyDown?.(e);
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      aria-current={isActive ? "true" : undefined}
+      aria-label={`Open details for ${event.title}, year ${event.year}`}
+      tabIndex={0}
+    >
+      <div className="card-body text-start">
+        <img src={event.imageURL} alt={event.title} className="modal-img" />
         <h5 className="card-title">{event.title}</h5>
         <p className="card-text text-muted">{event.year}</p>
-        <p className="card-text">{event.description.slice(0, 80)}...</p>
       </div>
-    </div>
+    </button>
   );
 }

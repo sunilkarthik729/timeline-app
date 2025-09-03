@@ -1,40 +1,64 @@
-import { Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Sun, Moon, Search } from "lucide-react";
+import { useEffect, useState } from "react";
+import "../styles.css";
 
-export default function Header() {
+type Props = {
+  onThemeChange?: (theme: "light" | "dark") => void;
+  onQueryChange?: (q: string) => void;
+};
+
+export default function Header({ onThemeChange, onQueryChange }: Props) {
   const [dark, setDark] = useState(false);
+  const [q, setQ] = useState("");
 
- 
   const toggleTheme = () => {
-    const root = document.documentElement;
+    const root = document.documentElement; // <html>
     root.classList.toggle("dark");
-    setDark(root.classList.contains("dark")); 
+    const nowDark = root.classList.contains("dark");
+    setDark(nowDark);
+    localStorage.setItem("theme", nowDark ? "dark" : "light");
+    onThemeChange?.(nowDark ? "dark" : "light");
   };
 
-  
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
       document.documentElement.classList.add("dark");
       setDark(true);
+      onThemeChange?.("dark");
     }
-  }, []);
-
-  
-  useEffect(() => {
-    localStorage.setItem("theme", dark ? "dark" : "light");
-  }, [dark]);
+  }, [onThemeChange]);
 
   return (
-    <header className="header bg-dark text-white py-3">
-      <div className="container d-flex justify-content-between align-items-center">
-        <div className="logo fs-4 fw-bold">Logo</div>
+    <header className="header shadow-sm">
+      <div className="container d-flex align-items-center justify-content-between gap-3">
+        <div className="logo d-flex align-items-center gap-2">
+          <span className="fs-4 fw-bold text-white">🚀 Timeline</span>
+        </div>
+
+        <div className="d-none d-sm-flex align-items-center bg-white bg-opacity-10 rounded-pill px-3 py-1 header-search">
+          <Search size={16} className="me-2 text-white" />
+          <input
+            aria-label="Search events"
+            className="form-control form-control-sm bg-transparent border-0 text-white"
+            placeholder="Search by title/year/category…"
+            value={q}
+            onChange={(e) => {
+              const v = e.target.value;
+              setQ(v);
+              onQueryChange?.(v);
+            }}
+          />
+        </div>
+
         <button
           id="toggle-theme-btn"
           className="btn btn-outline-light rounded-pill px-3"
           onClick={toggleTheme}
+          aria-pressed={dark}
         >
           {dark ? <Sun size={18} /> : <Moon size={18} />}
+          <span className="ms-2">{dark ? "Light" : "Dark"}</span>
         </button>
       </div>
     </header>
